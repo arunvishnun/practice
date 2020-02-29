@@ -1,0 +1,25 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "Javascript practices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunvishnun/practice.git"
+  },
+  "keywords": [
+    "javascript",
+    "interview",
+    "programs",
+    "questions"
+  ],
+  "author": "Arun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arunvishnun/practice/issues"
+  },
+  "homepage": "https://github.com/arunvishnun/practice#readme"
+}
