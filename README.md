@@ -1,2 +1,2 @@
-# practice
+# Practice
 Javascript problems and solutions
