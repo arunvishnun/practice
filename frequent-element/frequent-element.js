@@ -59,3 +59,25 @@ const getFrequent = (arr) => {
 }
 
 console.log(getFrequent( [9]) );
+
+//   Method 3
+function mostFrequent(array) {
+    const frequency = new Map();
+    let mostFrequentItemCount = 0;
+    let frequentItem = array[0];
+    array.forEach((item, index) => {
+
+        if (frequency.get(item)) {
+            frequency.set(item, frequency.get(item) + 1); 
+        } else {
+            frequency.set(item, 1)
+        }
+        if (mostFrequentItemCount <= frequency.get(item)) {
+            mostFrequentItemCount = frequency.get(item)
+            frequentItem = item;
+        }
+    });
+    return { frequentItem, mostFrequentItemCount };
+}
+
+console.log(mostFrequent([1,2,3,4,5,6,7,3,7]));

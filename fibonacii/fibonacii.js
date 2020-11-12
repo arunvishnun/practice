@@ -8,7 +8,7 @@
  * @param  {Number} n Target number
  * @return {Number}
  */
-
+  
  const fibonacci = (n) => {
 
     if(n <= 1) {
@@ -35,6 +35,7 @@ const fibonacci2 = (n) => {
     for (let i = 2; i <= n; i++) {
 
         b = a;
+        a = s;
         a = s;
 
         s = a + b;

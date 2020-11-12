@@ -23,7 +23,41 @@ function memoize(fn) {
     };
 }
 
-var factorial = memoize(function(num) {
+function memoizeWithMap(fn) {
+    const cache = new Map()
+    return function() {
+        const key = JSON.stringify(arguments);
+        if (cache.has(key)) {
+            console.log('served from cache!!!')
+            return cache.get(key);
+        } else {
+            const value = fn.apply(this, arguments);
+            console.log('Setting to cache!!!')
+            cache.set(key, value);
+            return value
+        }
+    }
+}
+
+// Reacts useMemo
+function useMemo(fn, dependencies = []) {
+    const cache = {};
+    return function() {
+        console.log(arguments)
+        const key = JSON.stringify([arguments, ...dependencies]);
+        if (cache[key]) {
+            console.log('served from cache!!!')
+            return cache[key];
+        } else {
+            const value = fn.apply(this, arguments);
+            console.log('Setting to cache!!!')
+            cache[key] = value;
+            return value;
+        }
+    }
+}
+
+var factorial = useMemo(function(num) {
     console.log('working for factorial(' + num + ')');
     if(num === 1) { return 1 };
     return num * factorial(num - 1);

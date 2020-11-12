@@ -5,22 +5,17 @@
  */
 
 // Method 1
-const flatten = (arr) => {
-    let result = [];
-    const flattenArray = (value, result) => {       
-        value.forEach( (item, index) => {          
-            if(Array.isArray(item)) {
-                flattenArray(item, result);
-            } else {
-                result.push(item);
-            }
-        })
-    }
-
-    flattenArray(arr, result);
+const flattenArray = (value, result = []) => {       
+    value.forEach( (item, index) => {          
+        if(Array.isArray(item)) {
+            flattenArray(item, result);
+        } else {
+            result.push(item);
+        }
+    })
     return result;
-} 
-console.log(flatten([1, 5, [2, [3]]]));
+}
+console.log(flattenArray([1, 5, [2, [3]]]));
 
 
 

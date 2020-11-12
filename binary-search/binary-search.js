@@ -28,3 +28,22 @@ Array.prototype.binarySearch = function(data) {
 
     return search(0, this.length - 1);
 };
+
+// Alternate implementation.
+function binarySearch(array, data) {
+    const search = (start, last) => {
+        const middle = Math.floor((start + last) / 2);
+        if (start === last) {
+            return array[start] === data ? start : -1;
+        }
+        if (data > array[middle]) {
+            return search(middle + 1, last)
+        } else {
+            return search(start, middle)
+        }
+    }
+    return search(0, array.length -1)
+}
+
+console.log([1,2,5,8,10,15,35,65].binarySearch(10))
+console.log(binarySearch([1,2,5,8,10,15,35,65], 10))
