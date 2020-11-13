@@ -31,7 +31,29 @@ let fn = (str) => {
  }
 
  let getNext = fn('a2b3c0d1');
- console.log(getNext());
- console.log(getNext());
- console.log(getNext());
- console.log(getNext());
+//  console.log(getNext());
+//  console.log(getNext());
+//  console.log(getNext());
+//  console.log(getNext());
+
+
+ let fn2 = (str) => {
+    let counter = 0;
+    return function() {
+        counter = counter % str.length;
+        return str[counter++];
+    }
+    
+ }
+
+ let getNext2 = fn2('a2b3c0d1');
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());
+ console.log(getNext2());

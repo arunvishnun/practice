@@ -52,3 +52,4 @@ const twoSumWithMap = (array, sum) => {
 }
 
  console.log(twoSumWithMap([1,2,3,6,8], 4))
+ console.log(twoSumWithMap([3,2,4], 6))
