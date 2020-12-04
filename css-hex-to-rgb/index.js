@@ -1,8 +1,9 @@
 function hexToRGB (hex) {
-    let decimal = []
+    let decimal = [];
     const hexDigits = hex.split('');
     for (let i=1; i < hexDigits.length; i=i+2) {
-        decimal.push(parseInt(hex[i] + hex[i+1], 16))
+        let hexValue = hex[i] + hex[i+1];
+        decimal.push(parseInt(hexValue, 16))
     }
     return `rgb(${decimal.join(',')})`
 }
