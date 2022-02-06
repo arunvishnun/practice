@@ -22,6 +22,10 @@ function factorialCaching(n) {
         fn[i] = fn[i-1] * i
         i++;
     }
+
+    // return function(intermediate) {
+    //     return fn[intermediate]
+    // }
     return fn[n];
 }
 

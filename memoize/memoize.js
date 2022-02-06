@@ -39,8 +39,8 @@ function memoizeWithMap(fn) {
     }
 }
 
-// Reacts useMemo
-function useMemo(fn, dependencies = []) {
+// Reacts useCallback
+function useCallback(fn, dependencies = []) {
     const cache = {};
     return function() {
         console.log(arguments)
@@ -57,7 +57,7 @@ function useMemo(fn, dependencies = []) {
     }
 }
 
-var factorial = useMemo(function(num) {
+var factorial = useCallback(function(num) {
     console.log('working for factorial(' + num + ')');
     if(num === 1) { return 1 };
     return num * factorial(num - 1);

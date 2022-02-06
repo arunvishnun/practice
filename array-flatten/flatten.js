@@ -5,9 +5,12 @@
  */
 
 // Method 1
-const flattenArray = (value, result = []) => {       
-    value.forEach( (item, index) => {          
-        if(Array.isArray(item)) {
+var count = 0;
+const flattenArray = (value, result = []) => {   
+    
+    value.forEach( (item, index) => {       
+        count++   
+        if(Array.isArray(item)) {  count++
             flattenArray(item, result);
         } else {
             result.push(item);
@@ -15,8 +18,10 @@ const flattenArray = (value, result = []) => {
     })
     return result;
 }
-console.log(flattenArray([1, 5, [2, [3]]]));
 
+// console.log(flattenArray([1, 5, [2, [3, [9]]]]));
+console.log(flattenArray([[[[2]]]]));
+console.log(count);
 
 
 // Method 2
@@ -40,7 +45,7 @@ console.log(flattenArray([1, 5, [2, [3]]]));
 
 // console.log(flattenArray([1,[2, 3]]));
 
-const flattenDeep = (x) => {
-    return Array.isArray(x) ? [].concat(...x.map(flattenDeep)) : x
-}
-console.log(flattenDeep([1, 5, [2, [3]]]));
+// const flattenDeep = (x) => {
+//     return Array.isArray(x) ? [].concat(...x.map(flattenDeep)) : x
+// }
+// console.log(flattenDeep([1, 5, [2, [3]]]));

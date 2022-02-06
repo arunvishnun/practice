@@ -37,7 +37,7 @@ const maxProfit = (prices) => {
 }
 
 console.log(maxProfit([7,1,5,3,6,4]));
-console.log(maxProfit([7,6,4,3,1]));
+// console.log(maxProfit([7,6,4,3,1]));
 
 // Method 2 O(n)
 const maxProfit2 = (prices) => {
@@ -59,5 +59,5 @@ const maxProfit2 = (prices) => {
     return maxProfit;
 }
 
-// console.log(maxProfit2([7,1,5,3,6,4]));
+console.log(maxProfit2([7,1,5,3,6,4]));
 // console.log(maxProfit2([7,6,10,1,3]));

@@ -1,0 +1,25 @@
+// https://leetcode.com/explore/featured/card/top-interview-questions-easy/94/trees/627/
+
+// Base case 
+//  - if root null return true
+//  - if root.left.val and root.right.val are not same - return false
+//  - If root.left.left and root.right.right are same
+function isSymmetric(root) {
+    if (root === null) {
+        return true;
+    }
+
+    return isSymmetricTree(root.left, root.right);
+}
+
+function isSymmetricTree(left, right) {
+    if (left === null || right === null) {
+        return left === right;
+    }
+
+    if (left.val !== right.val) {
+        return false;
+    }
+
+    return isSymmetricTree(left.left, right.right) && isSymmetricTree(left.right, right.left)
+}
