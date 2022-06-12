@@ -29,4 +29,4 @@ const obj = {
     }
 }
 
-console.log(get(obj, 'b.d'))
+console.log(get(obj, 'b.e'))
