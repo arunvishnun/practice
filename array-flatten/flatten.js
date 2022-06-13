@@ -7,10 +7,8 @@
 // Method 1
 var count = 0;
 const flattenArray = (value, result = []) => {   
-    
-    value.forEach( (item, index) => {       
-        count++   
-        if(Array.isArray(item)) {  count++
+    value.forEach( (item, index) => {
+        if(Array.isArray(item)) {
             flattenArray(item, result);
         } else {
             result.push(item);
